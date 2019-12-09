@@ -23,7 +23,7 @@
                     <span class="btn-bell-badge" v-if="message"></span>
                 </div>
                 <!-- 用户头像 -->
-                <div class="user-avator"><img src="../../assets/img/img.jpg"></div>
+                <div class="user-avator"><img src="../../../../assets/img/img.jpg"></div>
                 <!-- 用户名下拉菜单 -->
                 <el-dropdown class="user-name" trigger="click" @command="handleCommand">
                     <span class="el-dropdown-link">
@@ -44,6 +44,7 @@
     </div>
 </template>
 <script>
+
     import bus from '../common/bus';
     export default {
         data() {
@@ -108,7 +109,10 @@
         }
     }
 </script>
+<style src="../../../../assets/css/main.css" scoped></style>
+<style src="../../../../assets/css/color-dark.css" scoped></style>
 <style scoped>
+
     .header {
         position: relative;
         box-sizing: border-box;

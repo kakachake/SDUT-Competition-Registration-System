@@ -40,17 +40,17 @@
                 items: [
                     {
                         icon: 'el-icon-lx-home',
-                        index: 'dashboard',
+                        index: './dashboard',
                         title: '系统首页'
                     },
                     {
                         icon: 'el-icon-lx-cascades',
-                        index: 'table',
+                        index: './table',
                         title: '基础表格'
                     },
                     {
                         icon: 'el-icon-lx-copy',
-                        index: 'tabs',
+                        index: './tabs',
                         title: 'tab选项卡'
                     },
                     {
@@ -127,7 +127,7 @@
         },
         computed:{
             onRoutes(){
-                return this.$route.path.replace('/','');
+                return this.$route.path;
             }
         },
         created(){

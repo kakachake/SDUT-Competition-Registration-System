@@ -1,3 +1,11 @@
+<!--
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: kakachake
+ * @Date: 2019-12-08 10:57:14
+ * @LastEditors: kakachake
+ * @LastEditTime: 2019-12-09 10:46:30
+ -->
 <template>
     <div class="wrapper">
         <v-head></v-head>
@@ -46,3 +54,5 @@
         }
     }
 </script>
+<style src="../../../../assets/css/main.css" scoped></style>
+<style src="../../../../assets/css/color-dark.css" scoped></style>

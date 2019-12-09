@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: kakachake
+ * @Date: 2019-12-08 10:57:14
+ * @LastEditors: kakachake
+ * @LastEditTime: 2019-12-08 12:55:28
+ */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
@@ -6,7 +14,7 @@ import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 // import '../static/css/theme-green/index.css';       // 浅绿色主题
 import './assets/css/icon.css';
-import './components/common/directives';
+import './components/page/backboard/common/directives';
 import "babel-polyfill";
 
 Vue.config.productionTip = false
@@ -17,8 +25,11 @@ Vue.prototype.$axios = axios;
 
 //使用钩子函数对路由进行权限跳转
 router.beforeEach((to, from, next) => {
+    if (to.meta.title) {
+        document.title = to.meta.title
+    }
     const role = localStorage.getItem('ms_username');
-    if (!role && to.path !== '/login') {
+    if (!role && to.path !== '/backboard/login') {
         next('/login');
     } else if (to.meta.permission) {
         // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已

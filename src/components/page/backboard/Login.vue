@@ -57,11 +57,13 @@
 </script>
 
 <style scoped>
+    @import "../../../assets/css/main.css";
+    @import "../../../assets/css/color-dark.css";     /*深色主题*/
     .login-wrap{
         position: relative;
         width:100%;
         height:100%;
-        background-image: url(../../assets/img/login-bg.jpg);
+        background-image: url(../../../assets/img/login-bg.jpg);
         background-size: 100%;
     }
     .ms-title{

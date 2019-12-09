@@ -110,8 +110,10 @@
 
 </script>
 
+<style src="../../../../assets/css/main.css" scoped></style>
+<style src="../../../../assets/css/color-dark.css" scoped></style>
+<style scoped>
 
-<style>
     .tags {
         position: relative;
         height: 30px;

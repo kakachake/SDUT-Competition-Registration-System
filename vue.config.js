@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
     baseUrl: './',
     productionSourceMap: false,
@@ -15,5 +16,9 @@ module.exports = {
                 changeOrigin: true
             }
         }
+    },
+    chainWebpack: config => {
+        config.resolve.alias
+          .set("@", path.join(__dirname, "src"))
     }
 }
