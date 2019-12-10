@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-08 12:55:28
+ * @LastEditTime: 2019-12-10 21:25:24
  */
 import Vue from 'vue'
 import App from './App.vue'
@@ -29,8 +29,8 @@ router.beforeEach((to, from, next) => {
         document.title = to.meta.title
     }
     const role = localStorage.getItem('ms_username');
-    if (!role && to.path !== '/backboard/login') {
-        next('/login');
+    if (!role && to.path.match(/\/backboard\/*/) && to.path !== '/backboard/login') {
+        next('/backboard/login');
     } else if (to.meta.permission) {
         // 如果是管理员权限则可进入，这里只是简单的模拟管理员权限而已
         role === 'admin' ? next() : next('/403');
