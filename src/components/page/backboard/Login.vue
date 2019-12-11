@@ -55,12 +55,15 @@
         }
     }
 </script>
+<style src="../../../assets/css/main.css" scoped></style>
+<style src="../../../assets/css/color-dark.css" scoped></style>
+<style lang="scss">
 
+</style>
 <style scoped>
-    @import "../../../assets/css/main.css";
-    @import "../../../assets/css/color-dark.css";     /*深色主题*/
+
     .login-wrap{
-        position: relative;
+        position: absolute;
         width:100%;
         height:100%;
         background-image: url(../../../assets/img/login-bg.jpg);

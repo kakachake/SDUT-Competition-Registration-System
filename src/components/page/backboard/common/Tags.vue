@@ -110,8 +110,7 @@
 
 </script>
 
-<style src="../../../../assets/css/main.css" scoped></style>
-<style src="../../../../assets/css/color-dark.css" scoped></style>
+
 <style scoped>
 
     .tags {
@@ -185,3 +184,4 @@
     }
 
 </style>
+<style src="../../../../assets/css/color-dark.css" scoped></style>
