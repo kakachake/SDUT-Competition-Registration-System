@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:55:07
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-11 19:33:43
+ * @LastEditTime: 2019-12-12 08:58:46
  -->
 <template>
   <div>
@@ -87,11 +87,13 @@
         </div>
       </div>
     </div>
+    <J-Footer content="Designed by kakachake <a href='https://github.com/kakachake/SDUT-Competition-Registration-System' target='_blank'>View on GitHub</a>"></J-Footer>
   </div>
 </template>
 
 <script>
 import JHeader from "../common/J-Header"
+import JFooter from "../common/J-Footer"
 import JInput from "../components/J-Input"
 import JFormItem from "../components/J-FormItem"
 import JForm from "../components/J-Form"
@@ -151,7 +153,8 @@ export default {
         JHeader,
         JInput,
         JFormItem,
-        JForm
+        JForm,
+        JFooter
     },
     methods:{
       changeIdx(idx){
