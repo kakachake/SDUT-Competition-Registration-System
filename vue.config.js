@@ -1,3 +1,11 @@
+/*
+ * @Description: 
+ * @Version: 2.0
+ * @Autor: kakachake
+ * @Date: 2019-12-08 10:57:14
+ * @LastEditors: kakachake
+ * @LastEditTime: 2019-12-13 21:37:06
+ */
 const path = require('path');
 module.exports = {
     baseUrl: './',
@@ -11,9 +19,12 @@ module.exports = {
                     '/api':''
                 }
             },
-            '/ms':{
-                target: 'https://www.easy-mock.com/mock/592501a391470c0ac1fab128',
-                changeOrigin: true
+            '/acm':{
+                target: 'https://acm.sdut.edu.cn/',
+                changeOrigin: true,
+                pathRewrite:{
+                    '/acm':''
+                }
             }
         }
     },

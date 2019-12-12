@@ -110,8 +110,12 @@
 
 </script>
 
+<<<<<<< HEAD
 <style src="../../../../assets/css/main.css" scoped></style>
 <style src="../../../../assets/css/color-dark.css" scoped></style>
+=======
+
+>>>>>>> gh-pages
 <style scoped>
 
     .tags {
@@ -185,3 +189,7 @@
     }
 
 </style>
+<<<<<<< HEAD
+=======
+<style src="../../../../assets/css/color-dark.css" scoped></style>
+>>>>>>> gh-pages
