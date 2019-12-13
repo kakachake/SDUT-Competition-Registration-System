@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:55:07
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:34:05
+ * @LastEditTime: 2019-12-13 21:54:13
  -->
 <template>
   <div>
@@ -22,7 +22,7 @@
         </div>
         <div class="formPart">
           <transition name="form" mode="out-in" >
-            <JForm :model="form1" :rules="rules" class="form1" v-if="isActive==1" key="1">
+            <JForm :model="form1" :rules="rules" ref="ruleForm1" class="form1" v-if="isActive==1" key="1">
               <JFormItem label="团队名" prop="name">
                 <JInput v-model="form1.name" :name="'团队名'" placeholder="请输入团队名"></JInput>
               </JFormItem>
@@ -62,7 +62,7 @@
               </div>
               <div class="submit" @click="submit(1)">提交</div>
             </JForm>
-            <JForm :model="form2" class="form2" v-if="isActive==2" key="2" :rules="rules">
+            <JForm :model="form2" class="form2" ref="ruleForm2" v-if="isActive==2" key="2" :rules="rules">
                 <JFormItem :label="'姓名'" prop="stuName">
                   <JInput :width="'12rem'" v-model="form2.stuName"  placeholder="请输入姓名"></JInput>
                 </JFormItem>
@@ -169,6 +169,15 @@ export default {
       },
       handleDeletPerson(idx){
         this.form1.personItems.splice(idx,1);
+      },
+      submit(idx){
+        this.$refs['ruleForm'+idx].validate().then((res)=>{
+            if(res){
+
+            }else{
+              this.$message.error("您的填写项有误！")
+            }
+        })
       }
     }
 }
