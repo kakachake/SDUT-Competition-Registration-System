@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:38:57
+ * @LastEditTime: 2019-12-14 00:10:14
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -37,6 +37,21 @@ export default new Router({
                     path: 'dashboard',
                     component: resolve => require(['../components/page/backboard/Dashboard.vue'], resolve),
                     meta: { title: '系统首页' }
+                },
+                {
+                    path: 'newRace',
+                    component: resolve => require(['../components/page/backboard/newRace.vue'], resolve),
+                    meta: { title: '新增比赛' }
+                },
+                {
+                    path: 'RaceList',
+                    component: resolve => require(['../components/page/backboard/RaceList.vue'], resolve),
+                    meta: { title: '比赛列表' }
+                },
+                {
+                    path: 'registerList',
+                    component: resolve => require(['../components/page/backboard/registerList.vue'], resolve),
+                    meta: { title: '报名' }
                 },
                 {
                     path: '403',

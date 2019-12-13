@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:37:06
+ * @LastEditTime: 2019-12-13 23:24:15
  */
 const path = require('path');
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api':{
-                target:'http://jsonplaceholder.typicode.com',
+                target:'http://localhost:8000',
                 changeOrigin:true,
                 pathRewrite:{
                     '/api':''

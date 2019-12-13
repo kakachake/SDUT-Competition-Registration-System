@@ -4,14 +4,17 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:33:41
+ * @LastEditTime: 2019-12-13 23:31:44
  -->
 <template>
     <div id="app">
         <router-view></router-view>
     </div>
 </template>
+<style src="./assets/css/color-dark.css" ></style>
+<style src="./assets/css/main.css" ></style>
 <style >
+
 * { 
     margin: 0;
     padding: 0;

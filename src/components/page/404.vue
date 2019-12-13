@@ -4,12 +4,12 @@
  * @Autor: kakachake
  * @Date: 2019-12-12 09:23:35
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-12 09:31:22
+ * @LastEditTime: 2019-12-13 23:35:51
  -->
 <template>
   <div>
       <p>404</p>
-      <p class="content">迷路咯</p>
+      <p class="desc">迷路咯</p>
       <a href="./">返回首页</a>
   </div>
 </template>
@@ -30,7 +30,7 @@ div{
         font-size: 16rem;
         color: darkgray;
     }
-    .content{
+    .desc{
         font-size: 1rem;
         color: darkgray;
     }

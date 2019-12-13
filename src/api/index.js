@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:25:50
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 22:01:13
+ * @LastEditTime: 2019-12-13 23:24:28
  */
 import axios from 'axios';
 
@@ -43,9 +43,9 @@ export function getRankList() {
 
 export function submitTeam({name, personItems}) {
   return  axios({
-    method: 'get',
-    url: '/ads',
-    params: {
+    method: 'post',
+    url: '/',
+    data: {
       name,
       personItems
     }
