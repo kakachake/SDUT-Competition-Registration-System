@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:25:50
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:39:55
+ * @LastEditTime: 2019-12-13 22:01:13
  */
 import axios from 'axios';
 
@@ -33,6 +33,23 @@ export function getRankList() {
     data: {
       }
     }).then((res)=>{
+      // console.log(res);
+      return res
+  }).catch((error)=>{
+    // console.log(error.response);
+    return error.response
+  })
+}
+
+export function submitTeam({name, personItems}) {
+  return  axios({
+    method: 'get',
+    url: '/ads',
+    params: {
+      name,
+      personItems
+    }
+  }).then((res)=>{
       // console.log(res);
       return res
   }).catch((error)=>{

@@ -4,7 +4,7 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:55:07
  * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:54:13
+ * @LastEditTime: 2019-12-13 21:59:56
  -->
 <template>
   <div>
@@ -98,6 +98,7 @@ import JInput from "../components/J-Input"
 import JFormItem from "../components/J-FormItem"
 import JForm from "../components/J-Form"
 import {regular, validateOrder} from '@/utils/validate.js'
+import { submitTeam } from '@/api/index.js'
 
 export default {
     data(){
@@ -128,14 +129,14 @@ export default {
           ]
         },
         form1:{
-          name: "",
+          name: "测试",
           personItems:[{
-            stuName:"",
-            stuNum:"",
-            class:"",
-            qqNum:"",
-            phoneNum:"",
-            college:""
+            stuName:"张泰民",
+            stuNum:"17110501127",
+            class:"计科1708",
+            qqNum:"282281884",
+            phoneNum:"15615538215",
+            college:"计算机科学与技术学院"
           }]
         },
         form2:{
@@ -170,10 +171,16 @@ export default {
       handleDeletPerson(idx){
         this.form1.personItems.splice(idx,1);
       },
-      submit(idx){
-        this.$refs['ruleForm'+idx].validate().then((res)=>{
+      async submit(idx){
+        this.$refs['ruleForm'+idx].validate().then(async (res)=>{
             if(res){
-
+              if(idx == 1){
+                await submitTeam(this.form1).then((res)=>{
+                  
+                }).catch(()=>{
+                  this.$message.error("提交失败！")
+                })
+              }
             }else{
               this.$message.error("您的填写项有误！")
             }
