@@ -4,21 +4,13 @@
  * @Autor: kakachake
  * @Date: 2019-12-08 11:57:59
  * @LastEditors: kakachake
-<<<<<<< HEAD
- * @LastEditTime: 2019-12-09 08:48:29
-=======
- * @LastEditTime: 2019-12-10 21:32:27
->>>>>>> gh-pages
+ * @LastEditTime: 2019-12-13 21:44:40
  -->
 <template>
   <div class="header">
       <div class="logo">竞赛报名系统</div>
       <div class="bg">
-<<<<<<< HEAD
-          <img src="http://www.52jingsai.com/xydashi/images/banner.jpg" alt="">
-=======
           <img src="https://iph.href.lu/1920x450?text=%E7%AB%9E%E8%B5%9B%E6%8A%A5%E5%90%8D%E5%A4%B4%E5%9B%BE" alt="">
->>>>>>> gh-pages
       </div>
   </div>
 </template>
