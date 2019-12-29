@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 23:24:15
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-29 12:29:03
  */
 const path = require('path');
 module.exports = {
@@ -13,7 +13,7 @@ module.exports = {
     devServer: {
         proxy: {
             '/api':{
-                target:'http://localhost:8000',
+                target:'http://192.168.43.241:8080/',
                 changeOrigin:true,
                 pathRewrite:{
                     '/api':''

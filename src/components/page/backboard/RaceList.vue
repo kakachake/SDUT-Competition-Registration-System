@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-13 23:36:26
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-14 00:30:26
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 15:23:24
  -->
 <template>
   <div>
@@ -15,6 +15,7 @@
         </div>
         <div class="container">
             <el-table
+            v-loading="loading"
             :data="tableData"
             style="width: 100%">
                 <el-table-column
@@ -28,13 +29,18 @@
                     width="180">
                 </el-table-column>
                 <el-table-column
-                    prop="content"
+                    prop="desc"
                     label="比赛简介"
                     width="180">
                 </el-table-column>
                 <el-table-column
                     prop="num"
                     label="比赛人数">
+                </el-table-column>
+                <el-table-column
+                    prop="date"
+                    :formatter="formatDate"
+                    label="截止时间">
                 </el-table-column>
                 <el-table-column label="操作" width="200px">
                     <template slot-scope="scope">
@@ -44,7 +50,7 @@
                         <el-button
                         size="mini"
                         type="danger"
-                        @click="handleDelete(scope.$index, scope.row)">删除</el-button>
+                        @click="handleDelete(scope.row)">删除</el-button>
                     </template>
                 </el-table-column>
             </el-table>
@@ -53,21 +59,59 @@
 </template>
 
 <script>
+import { getMatchList, deleteM } from '@/api/back.js'
 export default {
     data(){
         return{
+            loading:false,
             tableData:[{
-                id:'123123',
-                name:"网络安全大赛",
-                content:"网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛网络安全大赛",
-                num:"1-3"
             }]
         }
     },
     methods:{
         handleToRegister(row){
             this.$router.push("./registerList?id="+row.id)
+        },
+        async handleDelete(row){
+            await deleteM(row.id).then((res)=>{
+                if(res.data == 1){
+                    this.$message.success("比赛删除成功！")
+                }else{
+                    this.$message.error("比赛删除失败！")
+                }
+            }).catch(()=>{
+                this.$message.error("比赛删除失败,请检查网络")
+            })
+            this.getMatchList()
+        },
+        async getMatchList(){
+            this.loading = true
+            await getMatchList().then((res)=>{
+                if(res.data.length){
+                    this.tableData = res.data.map((item)=>{
+                        return {
+                            name:item.mname,
+                            id:item.mid,
+                            desc:item.describe,
+                            date:item.end,
+                            num:item.min+"-"+item.max
+                        }
+                    })
+                }else{
+                    this.$message.error("查询比赛列表失败");
+                }
+            }).catch((res)=>{
+                this.$message.error("查询比赛列表失败");
+            })
+            this.loading = false
+        },
+        formatDate: function (row) {
+            var now = new Date(+row.date).toLocaleString().replace(/:\d{1,2}$/,' ');  
+            return now;
         }
+    },
+    mounted(){
+        this.getMatchList()
     }
 }
 

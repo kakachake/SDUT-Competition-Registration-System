@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-09 08:51:31
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-09 20:18:50
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-27 18:21:56
  -->
 <template>
   <div class="formItem">
@@ -152,7 +152,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .formItem{
-    margin: 0 .5rem .8rem 0;
+    margin: 0 .5rem 1rem 0;
     display: inline-block;
     label{
         width: 3.3em;

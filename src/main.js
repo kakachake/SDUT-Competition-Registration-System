@@ -3,24 +3,28 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:38:17
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-27 22:25:11
  */
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import axios from 'axios';
+import exportCsv from './utils/export.js'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css'; // 默认主题
 // import '../static/css/theme-green/index.css';       // 浅绿色主题
 import './assets/css/icon.css';
 import './components/page/backboard/common/directives';
 import "babel-polyfill";
+import vueXlsxTable from 'vue-xlsx-table'
+Vue.use(vueXlsxTable, {rABS: false})
 
 Vue.config.productionTip = false
 Vue.use(ElementUI, {
     size: 'small'
 });
+Vue.use(exportCsv)
 Vue.prototype.$axios = axios;
 
 //使用钩子函数对路由进行权限跳转

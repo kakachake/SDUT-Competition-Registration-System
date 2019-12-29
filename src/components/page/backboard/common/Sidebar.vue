@@ -44,12 +44,12 @@
                         title: '系统首页'
                     },
                     {
-                        icon: 'el-icon-lx-home',
+                        icon: 'el-icon-lx-calendar',
                         index: './newRace',
                         title: '新增比赛'
                     },
                     {
-                        icon: 'el-icon-lx-home',
+                        icon: 'el-icon-lx-calendar',
                         index: './RaceList',
                         title: '比赛列表'
                     },

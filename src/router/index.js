@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-14 00:10:14
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-27 18:56:01
  */
 import Vue from 'vue';
 import Router from 'vue-router';
@@ -14,8 +14,22 @@ Vue.use(Router);
 export default new Router({
     routes: [
         {
-            path: '/',
-            component: resolve => require(['../components/page/index/index.vue'], resolve),
+            path:'/',
+            component: resolve => require(['../components/page/index/matchList.vue'], resolve),
+            meta:{
+                title:"竞赛报名系统"
+            }
+        },
+        {
+            path:'/registerList/:id',
+            component: resolve => require(['../components/page/index/registerList.vue'], resolve),
+            meta:{
+                title:"竞赛报名系统"
+            }
+        },
+        {
+            path: '/re/:id',
+            component: resolve => require(['../components/page/index/register.vue'], resolve),
             meta:{
                 title:"竞赛报名系统"
             }

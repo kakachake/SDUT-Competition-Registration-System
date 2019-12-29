@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 11:25:50
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 23:24:28
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 11:55:32
  */
 import axios from 'axios';
 
@@ -41,13 +41,53 @@ export function getRankList() {
   })
 }
 
-export function submitTeam({name, personItems}) {
+export function submitTeam({name, personItems},mid) {
   return  axios({
     method: 'post',
-    url: '/',
+    url: 'api/team',
     data: {
       name,
+      mid,
       personItems
+    }
+  }).then((res)=>{
+      // console.log(res);
+      return res
+  }).catch((error)=>{
+    // console.log(error.response);
+    return error.response
+  })
+}
+
+export function submitPerson({name, stuName, stuNum, _class, qqNum,phoneNum,college },mid) {
+  return  axios({
+    method: 'post',
+    url: 'api/personal',
+    data: {
+      name,
+      stuName,
+      stuNum,
+      class:_class,
+      qqNum,
+      phoneNum,
+      college,
+      mid
+    }
+  }).then((res)=>{
+      // console.log(res);
+      return res
+  }).catch((error)=>{
+    // console.log(error.response);
+    return error.response
+  })
+}
+
+export function GetMatch(mid) {
+  return  axios({
+    method: 'post',
+    url: 'api/GetMatch',
+    data: {
+      mid
     }
   }).then((res)=>{
       // console.log(res);

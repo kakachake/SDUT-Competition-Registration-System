@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-13 23:04:53
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 23:56:49
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-27 17:19:44
  -->
 <template>
   <div>
@@ -42,7 +42,7 @@
                         v-model="form.date"
                         type="datetime"
                         format="yyyy-M-d HH:mm"
-                        value-format="yyyy-M-d HH:mm"
+                        value-format="timestamp"
                         placeholder="选择日期时间">
                         </el-date-picker>
                     </el-form-item>
@@ -62,10 +62,10 @@ export default {
     data(){
         return {
             form:{
-                name:"",
-                desc:"",
-                max_num:"",
-                min_num:"",
+                name:"测试",
+                desc:"测试",
+                max_num:3,
+                min_num:1,
                 date:""
             }
         }
@@ -75,7 +75,9 @@ export default {
             console.log(this.form);
             
             await submitRace(this.form).then((res)=>{
-                if(res.code == 200){
+                console.log(res);
+                
+                if(res.data == 1){
                     this.$message.success("提交成功");
                 }else{
                     this.$message.error("提交失败");

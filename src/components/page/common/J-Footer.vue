@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-12 08:53:13
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-12 08:56:53
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 12:21:10
  -->
 <template>
   <div class="ft">
@@ -20,6 +20,7 @@ export default {
 </script>
 <style lang="scss">
     .ft{
+        background: #6495ed;;
         width: 100%;
         text-align: center;
         font-size: 1rem;

@@ -3,15 +3,13 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-12 09:00:46
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-12 10:30:14
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 19:06:57
  -->
 <template>
 <div class="body">
+    <J-Header :img="'https://iph.href.lu/1920x450?text=%E6%8E%92%E5%90%8D%E5%A4%B4%E5%9B%BE'"></J-Header>
   <div class="contaner">
-      <div class="rHeader">
-          <img src="https://iph.href.lu/1920x450?text=%E6%8E%92%E5%90%8D%E5%A4%B4%E5%9B%BE" alt="">
-      </div>
       <div class="content">
           <table class="team">
                 <thead>
@@ -37,6 +35,7 @@
 <script>
 import { getRankList } from '@/api/index';
 import ranklist from './ranklist.json';
+import JHeader from "../common/J-Header"
 // import { async } from 'q';
 export default {
     data(){
@@ -56,6 +55,9 @@ export default {
                 img:"https://acm.sdut.edu.cn/acmss/sdut_gplt/gplt_2/static/image/c4.png"
             }]
         }
+    },
+    components:{
+        JHeader
     },
     methods:{
         async getRankList(){
@@ -88,7 +90,8 @@ export default {
 .body{
     height: auto;
     overflow: hidden;
-    background-color:darkblue;
+    // background-color:;
+    color: #000;
     .contaner{
         max-width: 1080px;
         margin: 0 auto;
@@ -100,6 +103,7 @@ export default {
         }
         .content{
             margin: .5rem;
+            overflow: hidden;
             .team{
                 border-collapse: collapse;
                 width: 100%;
@@ -114,8 +118,8 @@ export default {
                 }
                 tr,thead,td,th{
                     padding: .2rem;
-                    color: #fff;
-                    border: 1px solid #fff;
+                    color: #000;
+                    border: 1px solid #000;
                     font-size: 1rem;
                 }
                 .rankImg{

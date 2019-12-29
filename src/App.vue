@@ -3,8 +3,8 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 10:57:14
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 23:31:44
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 16:36:50
  -->
 <template>
     <div id="app">
@@ -23,11 +23,13 @@ ul,li{ padding:0;margin:0;list-style:none}
 @media (max-width: 768px){ 
     html{
         font-size: 4vw;
+        background: #f1f8ff;;
     }
 }
 @media (min-width: 768px){ 
     html{
-        font-size: 16px;
+        background: #f1f8ff;;
+        font-size: 18px;
     }
  }
 @media (min-width: 1200){ 
@@ -37,6 +39,7 @@ ul,li{ padding:0;margin:0;list-style:none}
 /*包含以下五种的链接*/
 a {
     text-decoration: none;
+    color: #fff;
 }
 /*正常的未被访问过的链接*/
 a:link {

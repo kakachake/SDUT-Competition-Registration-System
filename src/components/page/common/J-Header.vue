@@ -3,33 +3,38 @@
  * @Version: 2.0
  * @Autor: kakachake
  * @Date: 2019-12-08 11:57:59
- * @LastEditors: kakachake
- * @LastEditTime: 2019-12-13 21:44:40
+ * @LastEditors  : kakachake
+ * @LastEditTime : 2019-12-28 16:51:44
  -->
 <template>
   <div class="header">
-      <div class="logo">竞赛报名系统</div>
-      <div class="bg">
-          <img src="https://iph.href.lu/1920x450?text=%E7%AB%9E%E8%B5%9B%E6%8A%A5%E5%90%8D%E5%A4%B4%E5%9B%BE" alt="">
+      <div class="logo"><router-link to="/">{{title}}</router-link></div>
+      <div class="bg" v-show="img">
+          <img :src="img" alt="">
       </div>
   </div>
 </template>
 
 <script>
+import bg from "../../../assets/bg.png"
 export default {
-
+    props:{
+        title:{
+            default:"竞赛管理系统"
+        },
+        img:{
+            default:bg
+        }
+    }
 }
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 @import "../../../assets/css/config.scss";
 .header{
-    // position: fixed;
     z-index: 999;
-    // height: 50px;
     top:0;
-    background:$bg-color;
-    width: 100%;
+    background: none;
     .bg{
         // position: fixed;;
         z-index: -1;
@@ -39,13 +44,18 @@ export default {
         // background-size: cover;
         // background-repeat:no-repeat;
         // background-attachment:fixed
+        height: 18rem;
+        overflow: hidden;
+        max-width: 1200px;
+        margin: 0 auto;
         img{
             width: 100%;
-            height: auto;
+            height: 100%;
             margin: 0 auto;
         }
     }
     .logo{
+         background:$bg-color;
         text-align: center;
         line-height: 50px;
         color: #fff;
